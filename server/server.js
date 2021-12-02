@@ -7,7 +7,7 @@ import userRoute from './routes/user.route.js';
 import commentRoute from './routes/comment.route.js';
 import postRoute from './routes/post.route.js';
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 dotenv.config();
