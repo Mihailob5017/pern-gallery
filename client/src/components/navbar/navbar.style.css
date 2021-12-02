@@ -1,0 +1,13 @@
+.navbar-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+.navbar-title {
+	/* font-weight: lighter; */
+	color: #6a3ec8;
+
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 36px;
+}
