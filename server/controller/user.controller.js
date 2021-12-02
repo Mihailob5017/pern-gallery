@@ -1,7 +1,29 @@
 import { query } from '../database/index.db.js';
 
 // Login function
-export const login = async (req, res) => {};
+export const login = async (req, res) => {
+	const { username, password } = req.body;
+
+	try {
+		// Add user to db and return him
+		const result = await query(
+			`
+			SELECT *
+			FROM users
+			WHERE username = $1 AND password = $2 ;
+            `,
+			[username, password]
+		);
+		res.status(200).json({ status: 'success', data: result.rows });
+	} catch (error) {
+		console.log(error.message);
+		res.status(error.statusCode).json({
+			clientMessage: 'Error logging in',
+			status: error.statusCode,
+			message: error.message,
+		});
+	}
+};
 
 // Create account function
 export const createAccount = async (req, res) => {
